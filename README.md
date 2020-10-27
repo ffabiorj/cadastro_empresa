@@ -6,7 +6,7 @@
 
 ## Link do projeto em produção
 
-[Relatorio APP]
+[App em produção]
 
 ## Ferramentas
 
