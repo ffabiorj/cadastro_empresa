@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Empresas{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Empresas</h3>
+            </div>
+                
+            <ul class="list-group">
+                {% for empresa in empresas %}
+                <li class="list-group-item">
+                    <strong>{{ empresa.razao_social }}</strong>
+                    <span class="pull-right">
+                        <a href="" class="btn btn-info btn-xs">Editar</a> &nbsp;
+                        <a href="" class="btn btn-danger btn-xs">Deletar</a> &nbsp;
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
