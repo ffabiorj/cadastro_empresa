@@ -16,7 +16,7 @@
                     <strong>{{ empresa.razao_social }}</strong>
                     <span class="pull-right">
                         <a href="{% url 'atualizar_empresa' empresa.id %}" class="btn btn-info btn-xs">Editar</a> &nbsp;
-                        <a href="" class="btn btn-danger btn-xs">Deletar</a> &nbsp;
+                        <a href="{% url 'excluir_empresa' empresa.id %}" class="btn btn-danger btn-xs">Deletar</a> &nbsp;
                     </span>
                 </li>
                 {% endfor %}
