@@ -1,4 +1,5 @@
-from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib import messages
+from django.shortcuts import get_object_or_404, redirect, render
 
 from core.models import Empresa
 
@@ -28,8 +29,16 @@ def atualizar_empresa(request, pk):
         form = CriarEmpresaForm(data=request.POST, instance=empresa)
         if form.is_valid():
             form.save()
+            messages.success(request, "Empresa atualizada com sucesso.")
             return redirect("home")
     else:
         form = CriarEmpresaForm(instance=empresa)
 
     return render(request, "update.html", {"form": form})
+
+
+def excluir_empresa(request, pk):
+    empresa = get_object_or_404(Empresa, pk=pk)
+    empresa.delete()
+    messages.success(request, "Empresa excluída com sucesso.")
+    return redirect("home")
