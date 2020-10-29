@@ -99,6 +99,8 @@
 						<hr />
 						<div class="col-lg-4">
                                 <a href="{% url 'home' %}"><button class="btn btn-warning">Voltar</button></a>
+                                <a href="{% url 'atualizar_empresa' empresa.id %}"><button class="btn btn-info">Atualizer</button></a>
+                                <a href="{% url 'excluir_empresa' empresa.id %}"><button class="btn btn-danger">Excluir</button></a>
 						</div>
 					</div>
 				</div>
