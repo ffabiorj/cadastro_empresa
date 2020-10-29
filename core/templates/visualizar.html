@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %} Empresa {% endblock %}
+
+{% block main %}
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+					<h3 class="panel-title">Empresa</h3>
+			</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="razao_social">Razão Social</label>
+								<input type="text" class="form-control" disabled value="{{ empresa.razao_social }}">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="nome_fantasia">Nome Fantasia</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.nome_fantasia }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.cnpj }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.email }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.endereco }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.cidade }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="estato">Estado</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.estado }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.telefone }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="data_cadastro">Data cadastro</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.data_cadastro }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="risco">Status</label>
+                                <input type="text" class="form-control" disabled {% if empresa.status %}value="Ativa"{% else %}value="Não ativa"{% endif%}>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="risco">Risco</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.risco }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="agencia">Agencia</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.agencia }}">
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+                                <label for="conta">Conta</label>
+                                <input type="text" class="form-control" disabled value="{{ empresa.conta }}">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<hr />
+						<div class="col-lg-4">
+                                <a href="{% url 'home' %}"><button class="btn btn-warning">Voltar</button></a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
