@@ -16,11 +16,17 @@ def criar_empresa(request):
         form = CriarEmpresaForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Empresa criada com sucesso.")
             return redirect("home")
     else:
         form = CriarEmpresaForm()
 
     return render(request, "create.html", {"form": form})
+
+
+def visualizar_empresa(request, pk):
+    empresa = get_object_or_404(Empresa, pk=pk)
+    return render(request, "visualizar.html", {"empresa": empresa})
 
 
 def atualizar_empresa(request, pk):
