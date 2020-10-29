@@ -33,3 +33,11 @@ a.navbar-brand,
 .panel-title {
   font-weight: bolder;
 }
+
+.top {
+  margin-top: 50px;
+}
+
+.base-alert {
+  margin-top: -23px;
+}
