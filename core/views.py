@@ -12,14 +12,14 @@ def home(request):
 
 
 def criar_empresa(request):
+    form = CriarEmpresaForm(request.POST)
     if request.method == "POST":
-        form = CriarEmpresaForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, "Empresa criada com sucesso.")
             return redirect("home")
-    else:
-        form = CriarEmpresaForm()
+
+    form = CriarEmpresaForm()
 
     return render(request, "create.html", {"form": form})
 
