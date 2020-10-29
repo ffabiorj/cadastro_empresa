@@ -1,5 +1,4 @@
 from django.db import models
-from core.validators import validate_cnpj
 
 
 class Empresa(models.Model):
