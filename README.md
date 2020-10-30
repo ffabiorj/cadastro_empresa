@@ -4,15 +4,18 @@
 
 # Criação de um app de cadastro de empresas.
 
-## Link do projeto em produção
+## Link do projeto e da api em produção.
 
 [App em produção](https://cadastro-empresa.herokuapp.com/)
+
+[Api em produção](https://cadastro-empresa.herokuapp.com/api/v1/empresas/)
 
 ## Ferramentas
 
 - Django
 - Postgres
 - Heroku
+- Django restframework
 
 ## Roda o projeto localmente:
 
@@ -38,10 +41,39 @@
 - http://127.0.0.1:8000/
 ```
 
+### Endpoints da api
+
+- http://127.0.0.1:8000/api/v1/empresas/ # retorna todos os emprestimos do usuario
+- http://127.0.0.1:8000/api/v1/empresas/id/ # retorna um emprestimo pelo id
+
+### Exemplos de entrada para os endpoints
+
+```
+Dados para cadastrar empresa na api
+{
+    "razao_social": "teste",
+    "nome_fantasia": "teste",
+    "cnpj": "22.222.222/2222-22",
+    "email": "fabio20rj@gmail.com",
+    "endereco": "nereu sampaio, 61",
+    "cidade": "Rio de Janeiro",
+    "estado": "MG",
+    "telefone": "(21)3333-3333",
+    "data_cadastro": "2020-12-10",
+    "status": "A",
+    "risco": "C",
+    "agencia": "333-3",
+    "conta": "33.333-3",
+}
+
+```
+
 ### Rodar os testes
 
 ```
+
 pytest
+
 ```
 
 ### Links para as ferramentas utilizadas
@@ -55,3 +87,5 @@ pytest
 [Codecov](https://codecov.io/)
 
 [Travis](https://travis-ci.com/)
+
+[Django Rest Framework](https://www.django-rest-framework.org/)
