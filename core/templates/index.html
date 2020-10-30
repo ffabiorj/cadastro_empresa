@@ -12,6 +12,7 @@
 							</div>
 									
 							<ul class="list-group">
+									{% if empresas %}
 									{% for empresa in empresas %}
 									<li class="list-group-item">
 											<a href="{% url 'visualizar_empresa' empresa.id %}"><strong>{{ empresa.razao_social }}</strong></a>
@@ -22,6 +23,11 @@
 											</span>
 									</li>
 									{% endfor %}
+									{% else %}
+									<li class="list-group-item text-center">
+										Não há empresas cadastradas. <a href="{% url 'criar_empresa' %}">Clique aqui para criar uma.</a>
+									</li>
+									{% endif %}
 							</ul>
 
 					</div>
