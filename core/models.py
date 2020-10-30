@@ -1,4 +1,8 @@
 from django.db import models
+from django.core.validators import validate_email
+from core.validators import valid_cnpj
+
+# from core.validators import valid_date
 
 
 class Empresa(models.Model):
@@ -46,19 +50,19 @@ class Empresa(models.Model):
         ("DF", "DF"),
     ]
 
-    razao_social = models.CharField(max_length=200, blank=False, null=False)
-    nome_fantasia = models.CharField(max_length=200, blank=True, null=True)
-    cnpj = models.CharField(max_length=19, blank=False, null=False)
-    email = models.EmailField(blank=True, null=True)
+    razao_social = models.CharField(max_length=200, blank=False)
+    nome_fantasia = models.CharField(max_length=200, blank=True)
+    cnpj = models.CharField(max_length=19, blank=False, validators=[valid_cnpj])
+    email = models.EmailField(blank=True, validators=[validate_email])
     endereco = models.CharField(max_length=100, blank=True, null=True)
-    cidade = models.CharField(max_length=20, blank=True, null=True)
-    estado = models.CharField(max_length=2, choices=ESTADO, blank=True, null=True)
-    telefone = models.CharField(max_length=15, blank=True, null=True)
-    data_cadastro = models.DateField(blank=True, null=True)
-    status = models.CharField(max_length=6, choices=STATUS, blank=True, null=True)
-    risco = models.CharField(max_length=2, choices=RISCOS, blank=True, null=True)
-    agencia = models.CharField(max_length=6, blank=True, null=True)
-    conta = models.CharField(max_length=10, blank=True, null=True)
+    cidade = models.CharField(max_length=20, blank=True)
+    estado = models.CharField(max_length=2, choices=ESTADO, blank=True)
+    telefone = models.CharField(max_length=15, blank=True)
+    data_cadastro = models.DateField()
+    status = models.CharField(max_length=6, choices=STATUS, blank=True)
+    risco = models.CharField(max_length=2, choices=RISCOS, blank=True)
+    agencia = models.CharField(max_length=6, blank=True)
+    conta = models.CharField(max_length=10, blank=True)
 
     def __str__(self):
         return self.nome_fantasia
