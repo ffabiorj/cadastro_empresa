@@ -24,17 +24,17 @@ class EmpresaFormTest(TestCase):
 
     def test_error_razao_social(self):
         form = self.make_validated_form(razacao_social=1)
-        self.assertRaisesMessage(form.errors, "Informe um CNPJ valido.")
+        self.assertRaisesMessage(form.errors, "Este campo é obrigatório.")
 
     def test_error_cnpj(self):
         form = self.make_validated_form(cnpj=1)
-        self.assertRaisesMessage(form.errors, "Informe um CNPJ valido.")
+        self.assertRaisesMessage(form.errors, "Este campo é obrigatório.")
 
     def make_validated_form(self, **kwargs):
         valid = dict(
             razao_social="teste",
             nome_fantasia="teste",
-            cnpj="22.222.222/2222-22",
+            cnpj="35.379.838/0001-12",
             email="fabio20rj@gmail.com",
             endereco="nereu sampaio, 61",
             cidade="Rio de Janeiro",
