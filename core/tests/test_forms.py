@@ -24,11 +24,11 @@ class EmpresaFormTest(TestCase):
 
     def test_error_razao_social(self):
         form = self.make_validated_form(razacao_social=1)
-        self.assertFalse(form.errors)
+        self.assertRaisesMessage(form.errors, "Informe um CNPJ valido.")
 
     def test_error_cnpj(self):
         form = self.make_validated_form(cnpj=1)
-        self.assertFalse(form.errors)
+        self.assertRaisesMessage(form.errors, "Informe um CNPJ valido.")
 
     def make_validated_form(self, **kwargs):
         valid = dict(
