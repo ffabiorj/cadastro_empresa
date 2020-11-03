@@ -39,7 +39,7 @@ class EmpresaUpdateTest(TestCase):
     def test_method_update_status_code_200(self):
         url = reverse("atualizar_empresa", kwargs={"pk": self.empresa.id})
         response = self.client.post(url, data=self.payload, fallow=True)
-        self.assertEqual(302, response.status_code)
+        self.assertEqual(200, response.status_code)
 
     def test_method_update_wrong_id(self):
         url = reverse("atualizar_empresa", kwargs={"pk": 10})
