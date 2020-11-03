@@ -41,3 +41,8 @@ a.navbar-brand,
 .base-alert {
   margin-top: -23px;
 }
+
+.errorlist {
+  list-style-type: none;
+  text-align: center;
+}

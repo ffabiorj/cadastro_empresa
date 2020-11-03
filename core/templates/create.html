@@ -27,74 +27,79 @@
 					</div>
 
 					<div class="row">
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="nome_fantasia">Nome Fantasia</label>
 								{% render_field form.nome_fantasia class="form-control" %}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="cnpj">CNPJ</label>
 								{% render_field form.cnpj class="form-control" data-js="cnpj" %}
-								{{ form.razao_cnpj.errors }}
+								{{ form.cnpj.errors }}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="email">Email</label>
 								{% render_field form.email class="form-control" %}
+								{{ form.email.errors }}
+								
 							</div>
+							{{ form.email.errors }}
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="endereco">Endereço</label>
 								{% render_field form.endereco class="form-control" %}
+
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="cidade">Cidade</label>
 								{% render_field form.cidade class="form-control" %}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="estato">Estado</label>
 								{% render_field form.estado class="form-control" %}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="telefone">Telefone</label>
 								{% render_field form.telefone class="form-control" data-js="telefone" %}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="data_cadastro">Data cadastro</label>
 								{% render_field form.data_cadastro type="date" class="form-control" data-js="data" %}
+								{{ form.data_cadastro.errors }}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="status">Status</label>
 								{% render_field form.status class="form-control" %}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="risco">Risco</label>
 								{% render_field form.risco class="form-control" %}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="agencia">Agencia</label>
 								{% render_field form.agencia class="form-control" data-js="agencia" %}
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="conta">Conta</label>
 								{% render_field form.conta class="form-control" data-js="conta" %}
@@ -104,7 +109,7 @@
 
 					<div class="row">
 						<hr />
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<button type="submit" class="btn btn-info">Criar</button>
 						</div>
 					</div>
