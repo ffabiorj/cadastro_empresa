@@ -1,8 +1,17 @@
-from django.core.exceptions import ValidationError
 import re
+
+from django.core.exceptions import ValidationError
+from validate_docbr import CNPJ
+
+cnpj = CNPJ()
+
+
+def clean_cnpj(value):
+    value = re.sub(r"[-.\/]", "", value)
+    return value
 
 
 def valid_cnpj(value):
-    value = re.sub(r"\D", "", value)
-    if not value.isdigit():
-        raise ValidationError("Informe um CNPJ valido.", "digitos")
+    value = clean_cnpj(value)
+    if not cnpj.validate(value):
+        raise ValidationError("Informe um CNPJ valido.")
