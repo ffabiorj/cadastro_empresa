@@ -50,3 +50,4 @@ typing-extensions==3.7.4.3
 validate-docbr==1.8.2
 wcwidth==0.2.5
 whitenoise==5.2.0
+django-extensions==3.0.9

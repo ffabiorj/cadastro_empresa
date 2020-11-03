@@ -9,3 +9,4 @@ django-widget-tweaks==1.4.8
 djangorestframework==3.12.1
 django-cors-headers==3.5.0
 validate-docbr==1.8.2
+django-extensions==3.0.9
