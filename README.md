@@ -53,7 +53,7 @@ Dados para cadastrar empresa na api
 {
     "razao_social": "teste",
     "nome_fantasia": "teste",
-    "cnpj": "22.222.222/2222-22",
+    "cnpj": "35.379.838/0001-12",
     "email": "fabio20rj@gmail.com",
     "endereco": "nereu sampaio, 61",
     "cidade": "Rio de Janeiro",
