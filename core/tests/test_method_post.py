@@ -7,7 +7,7 @@ class EmpresaPostTest(TestCase):
         self.payload = {
             "razao_social": "teste",
             "nome_fantasia": "teste",
-            "cnpj": "22.222.222/2222-22",
+            "cnpj": "35.379.838/0001-12",
             "email": "fabio20rj@gmail.com",
             "endereco": "nereu sampaio, 61",
             "cidade": "Rio de Janeiro",
@@ -20,10 +20,10 @@ class EmpresaPostTest(TestCase):
             "conta": "33.333-3",
         }
 
-    def test_method_post_redirect(self):
+    def test_method_post_ok(self):
         url = reverse("criar_empresa")
         response = self.client.post(url, data=self.payload)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_method_post_status_code_200(self):
         url = reverse("criar_empresa")

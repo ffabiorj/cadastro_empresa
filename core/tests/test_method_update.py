@@ -8,7 +8,7 @@ class EmpresaUpdateTest(TestCase):
         self.empresa = Empresa.objects.create(
             razao_social="teste",
             nome_fantasia="teste",
-            cnpj="22.222.222/2222-22",
+            cnpj="35.379.838/0001-12",
             email="fabio20rj@gmail.com",
             endereco="nereu sampaio, 61",
             cidade="Rio de Janeiro",
@@ -23,7 +23,7 @@ class EmpresaUpdateTest(TestCase):
         self.payload = {
             "razao_social": "fabio",
             "nome_fantasia": "fabio",
-            "cnpj": "22.222.222/2222-22",
+            "cnpj": "35.379.838/0001-12",
             "email": "fabio20rj@gmail.com",
             "endereco": "São Joao",
             "cidade": "Minas",
@@ -39,9 +39,9 @@ class EmpresaUpdateTest(TestCase):
     def test_method_update_status_code_200(self):
         url = reverse("atualizar_empresa", kwargs={"pk": self.empresa.id})
         response = self.client.post(url, data=self.payload, fallow=True)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(response.status_code, 302)
 
     def test_method_update_wrong_id(self):
         url = reverse("atualizar_empresa", kwargs={"pk": 10})
         response = self.client.post(url, data=self.payload)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(response.status_code, 404)
