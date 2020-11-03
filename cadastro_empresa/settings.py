@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "rest_framework",
     "corsheaders",
+    "django_extensions",
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
