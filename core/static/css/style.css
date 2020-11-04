@@ -44,5 +44,6 @@ a.navbar-brand,
 
 .errorlist {
   list-style-type: none;
-  text-align: center;
+  background-color: yellow;
+  padding-left: 90px;
 }
