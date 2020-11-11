@@ -21,7 +21,7 @@
 
 1. Clone o repositório.
 2. Entre na pasta.
-3. Crie uma um ambiente de desenvolvimento com python 3.8.
+3. Crie um ambiente de desenvolvimento com python 3.8.
 4. Ative o ambiente.
 5. Instale as dependências.
 6. Crie um arquivo .env
